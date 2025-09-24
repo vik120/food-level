@@ -22,7 +22,7 @@ export default async function MealsPage() {
           </div>
           <div className={classes.cta}>
             <Link href="/meals/share">Share Your Favourite Recipe</Link>
-            <Link href="/meals">Explore Meals</Link>
+            {/* <Link href="/meals">Explore Meals</Link> */}
           </div>
         </div>
       </header>

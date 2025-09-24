@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono, Montserrat, Quicksand } from "next/font/google";
 import "./globals.css";
+import { cookies } from "next/headers";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,8 +28,9 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const initialHtmlClass = cookies().get("htmlClass")?.value ?? ""; 
   return (
-    <html lang="en">
+    <html lang="en" className={initialHtmlClass} suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased ${quicksand.variable} ${montserrat.variable}`}
       >
